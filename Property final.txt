@@ -1,0 +1,124 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+class Property {
+private:
+    double value;
+
+public:
+    string name, father, mother;
+
+    void setOwnername(string n) {
+        name = n;
+    }
+    string getOwnername() {
+        return name;
+    }
+    void setFather(string f) {
+        father = f;
+    }
+    string getFather() {
+        return father;
+    }
+    void setMother(string m) {
+        mother = m;
+    }
+    string getMother() {
+        return mother;
+    }
+    void setValue(double v) {
+        value = v;
+    }
+    double getValue() {
+        return value;
+    }
+
+    void printfTotallProperty() {
+        cout << "\nMy Name is " << name << "\nMy Father's Name is :" << father << "\nMy mother's Name is " << mother << "\nMy Property is (Million):" << value << endl;
+    }
+};
+
+int main() {
+    char MotherAliveInput;
+    
+    Property Mother;
+    Property Amit;
+    Property Shukhi;
+    Property Shahinur;
+    Property Fatema;
+
+    cout << "Rules:"<<endl;
+    cout<<"1. If Mother is Alive, then Mother will get 8/1 of the total property" << endl;
+    cout << "2. If there are sons, they will get double property of daughters" << endl;
+    cout << "3. If there are only daughters, they will get an equal share of the property" << endl;
+
+   
+    
+
+    cout << "\n*Distribution property to (1 son & 3 daughters)*" << endl;
+    cout << "\nPrevious Property Owner has totall 10 crore of Property."<< endl;
+   
+    cout << "\nIs your mother alive? (Type 'Y' for Yes or 'N' for No)" << endl;
+    cin >> MotherAliveInput;
+
+    if (MotherAliveInput == 'Y' || MotherAliveInput == 'y') {
+       
+        Mother.setOwnername("Rabeya Begum");
+        Mother.setFather("Ratan Chawdhury");
+        Mother.setMother("Shamsunnahar");
+        Mother.setValue(0.8);
+        
+        Amit.setOwnername("Amit Hassain");
+        Amit.setFather("Delower Hossain");
+        Amit.setMother("Rabeya Begum");
+        Amit.setValue(4.1);
+
+        Shukhi.setOwnername("Shukhi");
+        Shukhi.setFather("Delower Hossain");
+        Shukhi.setMother("Rabeya Begum");
+        Shukhi.setValue(1.36);
+
+        Shahinur.setOwnername("Shahinur");
+        Shahinur.setFather("Delower Hossain");
+        Shahinur.setMother("Rabeya Begum");
+        Shahinur.setValue(1.36);
+
+        Fatema.setOwnername("Fatema");
+        Fatema.setFather("Delower Hossain");
+        Fatema.setMother("Rabeya Begum");
+        Fatema.setValue(1.36);
+        
+        Mother.printfTotallProperty();
+        
+    } else if (MotherAliveInput == 'N' || MotherAliveInput == 'n') {
+      
+        Amit.setOwnername("Amit Hassain");
+        Amit.setFather("Delower Hossain");
+        Amit.setMother("Rabeya Begum");
+        Amit.setValue(5);
+       
+        Shukhi.setOwnername("Shukhi");
+        Shukhi.setFather("Delower Hossain");
+        Shukhi.setMother("Rabeya Begum");
+        Shukhi.setValue(1.66);
+
+        Shahinur.setOwnername("Shahinur");
+        Shahinur.setFather("Delower Hossain");
+        Shahinur.setMother("Rabeya Begum");
+        Shahinur.setValue(1.66);
+
+        Fatema.setOwnername("Fatema");
+        Fatema.setFather("Delower Hossain");
+        Fatema.setMother("Rabeya Begum");
+        Fatema.setValue(1.66);
+    } else {
+        cout << "Invalid input. Please enter 'Y' for Yes or 'N' for No." << endl;
+    }
+    Amit.printfTotallProperty();
+    Shukhi.printfTotallProperty();
+    Shahinur.printfTotallProperty();
+    Fatema.printfTotallProperty();
+    
+    return 0;
+}
